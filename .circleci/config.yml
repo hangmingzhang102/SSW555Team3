@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.13.2
+    steps:
+      - checkout
+      - run:
+          name: Run Python unittests
+          command: python -m unittest Data/Mars.py
+
+workflows:
+  test-workflow:
+    jobs:
+      - test
