@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Run Python unittests
-          command: python -m unittest Data/Mars.py
+          command: python -m unittest discover -s Data -p "*.py"
 
 workflows:
   test-workflow:
